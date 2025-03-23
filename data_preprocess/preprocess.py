@@ -12,7 +12,9 @@ output_dataset_path = sys.argv[2]
 
 data = sc.read_h5ad(input_adata_path)
 data.obs['n_counts'] = data.X.sum(axis=1)
+print("here1")
 data.var['ensembl_id'] = data.var.index
+print("here2")
 
 tk = LangCellTranscriptomeTokenizer(dict([(k, k) for k in data.obs.keys()]), nproc=4)
 tokenized_cells, cell_metadata = tk.tokenize_anndata(data)
