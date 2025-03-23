@@ -1018,10 +1018,10 @@ class LangCellTranscriptomeTokenizer(TranscriptomeTokenizer):
         norm_factor_vector = np.array(
             [
                 self.gene_median_dict[i]
-                for i in data.var["ensembl_id"][coding_miRNA_loc]
+                for i in data.var["ensembl_id"].iloc[coding_miRNA_loc]
             ]
         )
-        coding_miRNA_ids = data.var["ensembl_id"][coding_miRNA_loc]
+        coding_miRNA_ids = data.var["ensembl_id"].iloc[coding_miRNA_loc]
         coding_miRNA_tokens = np.array(
             [self.gene_token_dict[i] for i in coding_miRNA_ids]
         )
