@@ -1028,7 +1028,8 @@ class LangCellTranscriptomeTokenizer(TranscriptomeTokenizer):
 
         # define coordinates of cells passing filters for inclusion (e.g. QC)
         try:
-            data.obs["filter_pass"]
+            var_exists = False
+            #data.obs["filter_pass"]
         except AttributeError:
             var_exists = False
         else:
